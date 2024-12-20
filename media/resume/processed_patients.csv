@@ -1,0 +1,101 @@
+PatientID,Name,Age,Diagnosis,LabResult
+1001,patient_1,20,Diabetes,167
+1002,patient_2,74,Diabetes,153
+1003,patient_3,40,Hypertension,196
+1004,patient_4,23,Unknown,157
+1005,patient_5,35,Diabetes,115
+1006,patient_6,54,Flu,98
+1007,patient_7,65,Unknown,131
+1008,patient_8,77,Common Cold,193
+1009,patient_9,28,Unknown,129
+1010,patient_10,63,Common Cold,192
+1011,patient_11,35,Common Cold,172
+1012,patient_12,66,Unknown,83
+1013,patient_13,39,Flu,83
+1014,patient_14,64,Unknown,83
+1015,patient_15,37,Unknown,151
+1016,patient_16,41,Common Cold,100
+1017,patient_17,21,Unknown,80
+1018,patient_18,60,Flu,108
+1019,patient_19,62,Unknown,188
+1020,patient_20,67,Common Cold,120
+1021,patient_21,36,Common Cold,115
+1022,patient_22,50,Unknown,130
+1023,patient_23,32,Diabetes,172
+1024,patient_24,62,Unknown,95
+1025,patient_25,22,Common Cold,119
+1026,patient_26,75,Diabetes,172
+1027,patient_27,24,Unknown,184
+1028,patient_28,63,Diabetes,154
+1029,patient_29,21,Unknown,160
+1030,patient_30,47,Hypertension,104
+1031,patient_31,78,Unknown,103
+1032,patient_32,44,Hypertension,152
+1033,patient_33,30,Hypertension,191
+1034,patient_34,71,Diabetes,173
+1035,patient_35,56,Flu,175
+1036,patient_36,38,Diabetes,191
+1037,patient_37,39,Unknown,139
+1038,patient_38,35,Diabetes,131
+1039,patient_39,67,Unknown,166
+1040,patient_40,41,Flu,168
+1041,patient_41,40,Hypertension,138
+1042,patient_42,39,Diabetes,163
+1043,patient_43,21,Diabetes,164
+1044,patient_44,75,Flu,180
+1045,patient_45,70,Flu,193
+1046,patient_46,55,Flu,107
+1047,patient_47,31,Flu,196
+1048,patient_48,77,Common Cold,87
+1049,patient_49,78,Flu,94
+1050,patient_50,60,Flu,133
+1051,patient_51,42,Unknown,123
+1052,patient_52,73,Unknown,132
+1053,patient_53,52,Diabetes,119
+1054,patient_54,22,Hypertension,115
+1055,patient_55,62,Diabetes,156
+1056,patient_56,60,Diabetes,84
+1057,patient_57,53,Flu,138
+1058,patient_58,51,Common Cold,185
+1059,patient_59,39,Diabetes,136
+1060,patient_60,49,Flu,135
+1061,patient_61,47,Flu,90
+1062,patient_62,57,Hypertension,180
+1063,patient_63,47,Flu,198
+1064,patient_64,71,Flu,143
+1065,patient_65,21,Diabetes,189
+1066,patient_66,27,Flu,170
+1067,patient_67,36,Diabetes,199
+1068,patient_68,40,Diabetes,98
+1069,patient_69,42,Diabetes,145
+1070,patient_70,75,Common Cold,162
+1071,patient_71,67,Diabetes,86
+1072,patient_72,66,Unknown,167
+1073,patient_73,39,Diabetes,173
+1074,patient_74,49,Flu,123
+1075,patient_75,20,Flu,161
+1076,patient_76,23,Flu,99
+1077,patient_77,31,Hypertension,199
+1078,patient_78,22,Flu,96
+1079,patient_79,29,Common Cold,119
+1080,patient_80,53,Hypertension,124
+1081,patient_81,37,Common Cold,113
+1082,patient_82,28,Hypertension,122
+1083,patient_83,51,Flu,101
+1084,patient_84,40,Flu,181
+1085,patient_85,50,Common Cold,153
+1086,patient_86,61,Unknown,123
+1087,patient_87,76,Hypertension,135
+1088,patient_88,77,Unknown,117
+1089,patient_89,36,Hypertension,136
+1090,patient_90,33,Flu,178
+1091,patient_91,50,Diabetes,84
+1092,patient_92,20,Flu,102
+1093,patient_93,41,Diabetes,182
+1094,patient_94,55,Flu,190
+1095,patient_95,75,Flu,108
+1096,patient_96,40,Diabetes,96
+1097,patient_97,60,Diabetes,192
+1098,patient_98,45,Diabetes,88
+1099,patient_99,61,Common Cold,81
+1100,patient_100,73,Unknown,160

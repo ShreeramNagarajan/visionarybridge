@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visionary Bridge</title>
+    <link rel="stylesheet" href="">
+    
+    <link rel="icon" type="image/x-icon" href="{% static 'images/icon.jpg' %}">
+
+    <!--  
+    Stylesheets
+    =============================================
+    -->
+    <!-- Default stylesheets-->
+    <link
+      href="{% static 'lib/bootstrap/dist/css/bootstrap.min.css' %}"
+      rel="stylesheet"
+    />
+    <!-- Template specific stylesheets-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Volkhov:400i"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800"
+      rel="stylesheet"
+    />
+    <link href="{% static 'lib/animate.css/animate.css' %}" rel="stylesheet" />
+    <link
+      href="{% static 'lib/components-font-awesome/css/font-awesome.min.css' %}"
+      rel="stylesheet"
+    />
+    <link href="{% static 'lib/et-line-font/et-line-font.css' %}" rel="stylesheet" />
+    <link href="{% static 'lib/flexslider/flexslider.css' %}" rel="stylesheet" />
+    <link
+      href="{% static 'lib/owl.carousel/dist/assets/owl.carousel.min.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'lib/owl.carousel/dist/assets/owl.theme.default.min.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'lib/magnific-popup/dist/magnific-popup.css' %}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'lib/simple-text-rotator/simpletextrotator.css' %}"
+      rel="stylesheet"
+    />
+    <!-- Main stylesheet and color file-->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    <link
+      id="color-scheme"
+      href="{% static 'css/colors/default.css' %}"
+      rel="stylesheet"
+    />
+  </head>
+
+
+  <body>
+    <!-- <div>
+      <div class="page-loader">
+        <div class="loader">Loading...</div>
+      </div> -->
+      <style>
+        /* Initial navbar style (black and transparent) */
+        .navbar-custom {
+          background-color: rgba(6, 6, 6, 0.2); /* Black with 50% transparency */
+          transition: all 0.3s ease-in-out;
+          font-size: small;
+        }
+      
+        /* Navbar style after scrolling */
+        .navbar-scrolled {
+          background-color: rgba(0,0,0, 0.2) !important; /* Black with 80% transparency */
+          /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); Subtle shadow */
+        }
+      
+        /* Text color */
+        .navbar-custom a {
+          color: white !important; /* Ensure text remains visible on black background */
+          transition: color 0.3s ease-in-out;
+        }
+      
+        .navbar-scrolled a {
+          color: black !important; /* Keep text color the same after scroll */
+        }
+      </style>
+      
+      
+      <nav
+        id="navbar"
+        class="navbar navbar-custom navbar-fixed-top"
+        role="navigation"
+      >
+        <div class="navbar-header">
+          <button
+            class="navbar-toggle"
+            type="button"
+            data-toggle="collapse"
+            data-target="#custom-collapse"
+          >
+            <span class="sr-only">Toggle navigation</span
+            ><span class="icon-bar"></span><span class="icon-bar"></span
+            ><span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#home">VISIONARY BRIDGE</a>
+        </div>
+        <div class="collapse navbar-collapse" id="custom-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a  href="#home">HOME</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#services">SERVICES</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+            {% if user.is_authenticated %}
+            <li>
+              <a
+                href="#"
+                onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+                >Logout</a
+              >
+              <form
+                id="logout-form"
+                action="{% url 'logout' %}"
+                method="post"
+                style="display: none;"
+              >
+                {% csrf_token %}
+              </form>
+            </li>
+            <li><a href="{% url 'database_list' %}">CEO</a></li>
+            {% else %}
+            <li><a href="{% url 'login' %}">Login</a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </nav>
+      
+      <script>
+        const navbar = document.getElementById("navbar");
+      
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 50) {
+            navbar.classList.add("navbar-scrolled");
+          } else {
+            navbar.classList.remove("navbar-scrolled");
+          }
+        });
+      </script>
+      
+      <section
+  class="home-section home-fade bg-dark-60 landing-header"
+  id="home"
+  style="height: 100vh; padding: 50px 0; background-image: url({% static 'images/final1.jpg' %}); background-size: cover; background-position: center;"
+>
+  <div class="titan-caption">
+    <div class="caption-content">
+      <div class="container">
+        <!-- Visionary Bridge Title with Slow Transition -->
+        <div class="font-alt mb-30 titan-title-size-4 visionary-title" style="margin-top: 50px;">VISIONARY BRIDGE</div>
+        
+        <!-- Bridging Success Together with Slightly Bigger Text -->
+        <div class="font-alt tagline">Bridging Success Together<br /></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CSS for Animations and Styling -->
+<style>
+ /* Visionary Bridge: Modern Transition with Slower Fade-Out */
+.visionary-title {
+  font-size: 4rem; /* Larger text for prominence */
+  animation: modernTransition 3.5s cubic-bezier(0.25, 1, 0.5, 1) forwards; /* Smooth animation */
+  color: #fff;
+  text-align: center;
+  opacity: 0; /* Initially hidden */
+}
+
+/* Tagline: Slightly Larger Text */
+.tagline {
+  font-size: 2rem; /* Adjusted size for modern look */
+  font-weight: 400;
+  color: #f5f5f5;
+  text-align: center;
+  margin-top: 15px;
+  animation: fadeInUp 2s ease-out 0.5s forwards; /* Subtle fade-in with delay */
+  opacity: 0; /* Initially hidden */
+}
+
+/* Keyframes for Modern Transition with Slow Fade-Out */
+@keyframes modernTransition {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9); /* Start below and smaller */
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0) scale(1.05); /* Overshoot for dynamic effect */
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(0) scale(1); /* Hold position briefly */
+  }
+  100% {
+    opacity: 10; /* Slowly fade out */
+    transform: translateY(-10px); /* Slight upward movement for exit */
+  }
+}
+
+/* Keyframes for Subtle Fade-In */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+</style>
+
+
+      
+<section class="module pt-0 pb-0" id="about">
+  <div class="row position-relative m-0">
+    <!-- Image Section -->
+    <div class="col-xs-12 col-md-6 side-image" data-background="{% static 'images/section-14.jpg' %}">
+      <img src="{% static 'images/about.jpg' %}" alt="" style="height:400px; width: 960px; margin-top: 100px;" />
+    </div>
+    
+    <!-- Text Section -->
+    <div class="col-xs-12 col-md-6 col-md-offset-6 side-image-text">
+      <div class="row">
+        <div class="col-sm-12" style="position: relative; top: -40px;">
+          <h2 class="module-title font-alt align-left">Who we are</h2>
+          <div class="module-subtitle font-serif align-left">
+            
+          </div>
+          <p style="text-align: justify; font-size: 1.8cap;" >
+            Visionary Bridge Pvt Ltd is a cutting-edge human resources consulting firm dedicated to delivering innovative and impactful solutions that connect ideas, people, and success. With a strong emphasis on collaboration, creativity, and an unwavering commitment to excellence, we have established ourselves as a trusted partner for individuals and organizations aiming for transformative growth. Our expertise spans various domains, enabling us to effectively bridge the gaps between vision and execution while fostering sustainable development. We prioritize people-centric approaches, ensuring a nurturing and inclusive environment for both our employees and partners.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+      
+      <!-- Reduce space between services and about -->
+      <section class="module pb-0" id="services">
+        <div class="container" style="margin-top: -95px;">
+          <h2 class="module-title font-alt">Services</h2>
+          <div class="row mb-60" style="margin-top: -65px;">
+            <div class="col-sm-6 col-md-3 col-lg-3" >
+              <div class="alt-features-item"  >
+                <div class="alt-features-icon"><span class="icon-strategy"></span></div>
+                <h3 class="alt-features-title font-alt">Workforce Supply and Staffing
+                </h3><b>Temporary Staffing:</b> Providing temporary employees to meet seasonal or project-based demands.
+                <b>Permanent Staffing:</b> Sourcing and placing full-time employees.<br>
+                <b> Contract Staffing:</b> Supplying professionals for specific contract-based roles.
+                
+              </div>
+              <div class="alt-features-item" style="margin-top: 63px;">
+                <div class="alt-features-icon"><span class="icon-tools-2"></span></div>
+                <h3 class="alt-features-title font-alt">Recruitment Services</h3>End-to-end recruitment solutions for junior, mid-level, and senior positions.
+                Specialized recruitment for industries such as IT, healthcare, logistics, etc.
+                Campus recruitment drives and bulk hiring solutions.
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3 col-lg-3">
+              <div class="alt-features-item">
+                <div class="alt-features-icon"><span class="icon-target"></span></div>
+                <h3 class="alt-features-title font-alt">Skilled and Unskilled Labor Supply</h3>Providing skilled workers, such as technicians, engineers, or IT professionals.
+                Supplying unskilled or semi-skilled labor for manufacturing, construction, or other sectors.
+                
+              </div>
+              <div class="alt-features-item" style="margin-top: 125px;">
+                <div class="alt-features-icon"  ><span class="icon-tools"></span></div>
+                <h3 class="alt-features-title font-alt">HR Outsourcing
+                </h3>Managing all or part of a company’s HR functions, such as recruitment, payroll, and compliance.
+                Providing remote or on-site HR professionals to oversee operations.
+                
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3 col-lg-3">
+              <div class="alt-features-item">
+                <div class="alt-features-icon"><span class="icon-camera"></span></div>
+                <h3 class="alt-features-title font-alt">Managed Staffing Solutions</h3>Acting as a Managed Services Provider (MSP) to oversee the contingent workforce.
+                Providing Vendor Management System (VMS) platforms to manage staffing vendors effectively.
+                
+                
+              </div>
+              <div class="alt-features-item"  style="margin-top: 100px;">
+                <div class="alt-features-icon"><span class="icon-mobile"></span></div>
+                <h3 class="alt-features-title font-alt"> Digital HR Tools and Support</h3>Offering HR technology solutions like Applicant Tracking Systems (ATS) or employee portals.
+                Providing time-tracking and task management tools for contingent staff.
+              </div>
+            </div>
+            <div class="col-sm-6 col-md-3 col-lg-3">
+              <div class="alt-features-item">
+                <div class="alt-features-icon"><span class="icon-linegraph"></span></div>
+                <h3 class="alt-features-title font-alt">Payroll and Compliance Management</h3>Handling payroll for supplied employees, ensuring legal and tax compliance.
+                Ensuring labor laws, minimum wage standards, and statutory benefits are adhered to.
+                
+              </div>
+              <div class="alt-features-item" style="margin-top: 120px;">
+                <div class="alt-features-icon"><span class="icon-basket"></span></div>
+                <h3 class="alt-features-title font-alt">Industry-Specific Workforce Solutions</h3>Providing tailored HR solutions to industries like healthcare, IT, construction, logistics, etc.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Reduce space between contact and services -->
+      <section class="module pb-0" id="contact">
+        <div class="container" style="margin-top: -120px;">
+            <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <h2 class="module-title font-alt">Contact us</h2>
+                    <div class="module-subtitle font-serif"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <form id="contactForm" role="form" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <h3 class="alt-features-title font-alt">ASPIRANTS APPLY HERE</h3>
+                            <label class="sr-only" for="name" >Name</label>
+                            <input class="form-control" type="text" id="name" name="Name" placeholder="Your Name*" value="Name" required data-validation-required-message="Please enter your name." />
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only" for="email">Email</label>
+                            <input class="form-control" type="email" id="email" name="Email" value="Email" required placeholder="Your Email*" data-validation-required-message="Please enter your email address." />
+                        </div>
+                        <div class="form-group">
+                            <label class="sr-only" for="mobile_no">Mobile No</label>
+                            <input class="form-control" type="text" id="mobile_no" name="Mobile_no" value="Mobile" required data-validation-required-message="Please enter your mobile number." />
+                        </div>
+                        <div class="form-group">
+                            <label for="resume" class="custom-file-label">Upload your Resume</label>
+                            <input class="form-control custom-file-input" type="file" id="resume" name="Resume" required data-validation-required-message="Upload your resume" />
+                        </div>
+                        <div class="text-center">
+                            <button class="btn btn-block btn-round btn-d" id="cfsubmit" type="submit"  style="background-color:rgba(0,0,0, 0.5)">Submit</button>
+                        </div>
+                    </form>
+                    <div class="ajax-response font-alt" id="contactFormResponse"></div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="alt-features-item mt-0">
+                        <div class="alt-features-icon">
+                            <span class="icon-megaphone"></span>
+                        </div>
+                        <h3 class="alt-features-title font-alt">Where to meet</h3>
+                        Visionary Bridge Pvt Ltd<br />Kil Kotagiri<br />The Nilgiris, 643216 <br>Tamilnadu,IN
+                    </div>
+                    <div class="alt-features-item mt-xs-60">
+                        <div class="alt-features-icon">
+                            <span class="icon-map"></span>
+                        </div>
+                        <h3 class="alt-features-title font-alt">Say Hello</h3>
+                        Email: visionarybridge1@gmail.com<br />Phone: +91 8072473108
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <style>/* Hide the default file input */
+      input[type="file"] {
+          display: none;
+      }
+      
+      /* Customize the label */
+      .custom-file-label {
+          display: inline-block;
+          background-color: rgba(0,0,0, 0.5);
+          color: white;
+          padding: 10px 20px;
+          border-radius: 5px;
+          cursor: pointer;
+      }
+      
+      /* Optionally: Style the label when file is chosen */
+      .custom-file-input:active + .custom-file-label {
+          background-color: #0056b3;
+      }
+      
+      /* Optional: Adjust file name text */
+      .custom-file-label::after {
+          content: " ";
+      }
+
+      /* Reduce width of input boxes */
+input.form-control {
+    width: 60%; /* You can adjust this percentage to make the boxes smaller */
+    margin-bottom: 15px; /* Add some spacing between input fields */
+    font-size: 14px; /* Optional: Reduce the font size inside the input box */
+    border-color: black;
+}
+
+/* Optional: Reduce height of the input boxes */
+input.form-control[type="text"],
+input.form-control[type="email"],
+input.form-control[type="file"] {
+    height: 35px; /* Adjust the height to make the input box shorter */
+}
+
+/* Optional: Adjust button size */
+button#cfsubmit {
+    width: 60%; /* Make the submit button the same width as input fields */
+    height: 40px; /* Adjust height of the button */
+    font-size: 16px; /* Adjust font size on button */
+}
+
+      </style>
+    <Script>document.getElementById("resume").addEventListener("change", function(event) {
+      var fileName = event.target.files[0] ? event.target.files[0].name : "No file chosen";
+      var label = event.target.nextElementSibling; // Get the label next to the input field
+      label.textContent = fileName ? fileName : "Upload your Resume"; // Update label text
+  });
+  </Script>
+
+<footer>
+  <div class="footer-container">
+    <div class="footer-left">
+      <p>&copy; 2025 visionarybridge. All rights reserved.</p>
+    </div>
+    <div class="footer-center">
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+    </div>
+    <div class="footer-right">
+      <ul>
+        <li><a href="#" target="_blank">Facebook</a></li>
+        <li><a href="#" target="_blank">Twitter</a></li>
+        <li><a href="#" target="_blank">Instagram</a></li>
+      </ul>
+    </div>
+  </div>
+</footer >
+<style>footer {
+  background-color: #333;
+  color: white;
+  padding: 20px 0;
+  font-size: 14px;
+  margin-top: 50px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+  flex: 1;
+}
+
+.footer-left p {
+  margin: 0;
+}
+
+.footer-center ul,
+.footer-right ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 15px;
+}
+
+.footer-center li,
+.footer-right li {
+  display: inline;
+}
+
+.footer-center a,
+.footer-right a {
+  text-decoration: none;
+  color: white;
+}
+
+.footer-center a:hover,
+.footer-right a:hover {
+  text-decoration: underline;
+}
+</style>
+      
+    </div>
+  </body>
+</html>
